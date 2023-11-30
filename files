@@ -1,0 +1,4 @@
+download assets from 183.243.0.743 to /git/assets/server.assets
+reload /git/assets/server.assets
+connect to 832.234.2.346
+start /git/assets/server/start.main

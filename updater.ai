@@ -1,0 +1,20 @@
+#include <SNL_AI>
+#define <AI_REPOS>
+SSHconnect 192.145.3.255
+
+if(SSHconnect, failed) {
+    TTSconnect 192.145.3.256
+} else {
+    ping 192.145.3.255
+}
+if(TTSconnect, failed) {
+    setConnection=safe
+    reloadPin=13
+    SSHconnect 192.145.3.255
+} else {
+    ping 192.145.3.256
+}
+if(SSHconnect && TTSconnect, failed) {
+    downloadFiles=https://sharenight-labs.com/ai/update/latest
+    reload
+}
